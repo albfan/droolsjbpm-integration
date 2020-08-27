@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-osgi</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-karaf-itests</artifactId>
@@ -21,10 +20,10 @@
 
     <maven.hibernate.dialect>org.hibernate.dialect.H2Dialect</maven.hibernate.dialect>
     <maven.jdbc.driver.class>org.h2.Driver</maven.jdbc.driver.class>
-    <maven.jdbc.db.name/>
-    <maven.jdbc.db.port/>
-    <maven.jdbc.db.server/>
-    <maven.jdbc.driver.jar/>
+    <maven.jdbc.db.name></maven.jdbc.db.name>
+    <maven.jdbc.db.port></maven.jdbc.db.port>
+    <maven.jdbc.db.server></maven.jdbc.db.server>
+    <maven.jdbc.driver.jar></maven.jdbc.driver.jar>
     <maven.jdbc.username>sa</maven.jdbc.username>
     <maven.jdbc.password>sa</maven.jdbc.password>
     <maven.jdbc.url>jdbc:h2:tcp://localhost/${project.basedir}/target/kie-karaf-itests;MVCC=TRUE</maven.jdbc.url>

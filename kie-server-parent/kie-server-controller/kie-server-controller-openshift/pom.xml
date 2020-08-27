@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>kie-server-controller</artifactId>
     <groupId>org.kie.server</groupId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-server-controller-openshift</artifactId>
@@ -125,26 +123,26 @@
             <org.kie.server.location>http://myapp2-kieserver-myproject.127.0.0.1.nip.io:80/services/rest/server</org.kie.server.location>
           </systemPropertyVariables>
           <environmentVariables>
-            <KUBERNETES_MASTER />
-            <KUBERNETES_API_VERSION />
-            <KUBERNETES_TRUST_CERTIFICATES />
-            <KUBERNETES_CERTS_CA_FILE />
-            <KUBERNETES_CERTS_CA_DATA />
-            <KUBERNETES_CERTS_CLIENT_FILE />
-            <KUBERNETES_CERTS_CLIENT_DATA />
-            <KUBERNETES_CERTS_CLIENT_KEY_FILE />
-            <KUBERNETES_CERTS_CLIENT_KEY_DATA />
-            <KUBERNETES_CERTS_CLIENT_KEY_ALGO />
-            <KUBERNETES_CERTS_CLIENT_KEY_PASSPHRASE />
-            <KUBERNETES_AUTH_BASIC_USERNAME />
-            <KUBERNETES_AUTH_BASIC_PASSWORD />
-            <KUBERNETES_AUTH_TRYKUBECONFIG />
-            <KUBERNETES_AUTH_TRYSERVICEACCOUNT />
-            <KUBERNETES_AUTH_TOKEN />
-            <KUBERNETES_WATCH_RECONNECTINTERVAL />
-            <KUBERNETES_WATCH_RECONNECTLIMIT />
-            <KUBERNETES_REQUEST_TIMEOUT />
-            <KUBERNETES_NAMESPACE />
+            <KUBERNETES_MASTER></KUBERNETES_MASTER>
+            <KUBERNETES_API_VERSION></KUBERNETES_API_VERSION>
+            <KUBERNETES_TRUST_CERTIFICATES></KUBERNETES_TRUST_CERTIFICATES>
+            <KUBERNETES_CERTS_CA_FILE></KUBERNETES_CERTS_CA_FILE>
+            <KUBERNETES_CERTS_CA_DATA></KUBERNETES_CERTS_CA_DATA>
+            <KUBERNETES_CERTS_CLIENT_FILE></KUBERNETES_CERTS_CLIENT_FILE>
+            <KUBERNETES_CERTS_CLIENT_DATA></KUBERNETES_CERTS_CLIENT_DATA>
+            <KUBERNETES_CERTS_CLIENT_KEY_FILE></KUBERNETES_CERTS_CLIENT_KEY_FILE>
+            <KUBERNETES_CERTS_CLIENT_KEY_DATA></KUBERNETES_CERTS_CLIENT_KEY_DATA>
+            <KUBERNETES_CERTS_CLIENT_KEY_ALGO></KUBERNETES_CERTS_CLIENT_KEY_ALGO>
+            <KUBERNETES_CERTS_CLIENT_KEY_PASSPHRASE></KUBERNETES_CERTS_CLIENT_KEY_PASSPHRASE>
+            <KUBERNETES_AUTH_BASIC_USERNAME></KUBERNETES_AUTH_BASIC_USERNAME>
+            <KUBERNETES_AUTH_BASIC_PASSWORD></KUBERNETES_AUTH_BASIC_PASSWORD>
+            <KUBERNETES_AUTH_TRYKUBECONFIG></KUBERNETES_AUTH_TRYKUBECONFIG>
+            <KUBERNETES_AUTH_TRYSERVICEACCOUNT></KUBERNETES_AUTH_TRYSERVICEACCOUNT>
+            <KUBERNETES_AUTH_TOKEN></KUBERNETES_AUTH_TOKEN>
+            <KUBERNETES_WATCH_RECONNECTINTERVAL></KUBERNETES_WATCH_RECONNECTINTERVAL>
+            <KUBERNETES_WATCH_RECONNECTLIMIT></KUBERNETES_WATCH_RECONNECTLIMIT>
+            <KUBERNETES_REQUEST_TIMEOUT></KUBERNETES_REQUEST_TIMEOUT>
+            <KUBERNETES_NAMESPACE></KUBERNETES_NAMESPACE>
             <KUBERNETES_TLS_VERSIONS>TLSv1.2,TLSv1.1,TLSv1</KUBERNETES_TLS_VERSIONS>
           </environmentVariables>
         </configuration>

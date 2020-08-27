@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>camel-container-tests</artifactId>
     <groupId>org.drools</groupId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>camel-container-integration-tests</artifactId>
 
   <name>Container tests for Camel integration</name>
-  <description>
-    Container tests for Camel integration
-  </description>
+  <description>Container tests for Camel integration</description>
 
   <properties>
     <!-- <container.port/> can't define the default port value, because the build-helper-maven-plugin:reserve-network-port
@@ -264,12 +260,12 @@
                 </goals>
                 <configuration>
                   <target>
-                    <get src="${eap.url}" dest="${project.build.directory}/eap.zip" />
+                    <get src="${eap.url}" dest="${project.build.directory}/eap.zip"></get>
                     <unzip src="${project.build.directory}/eap.zip" dest="${project.build.directory}/application-server">
-                      <cutdirsmapper dirs="1" />
+                      <cutdirsmapper dirs="1"></cutdirsmapper>
                     </unzip>
-                    <get src="${fuse.on.eap.url}" dest="${project.build.directory}/fuse-on-eap.jar"/>
-                    <java jar="${project.build.directory}/fuse-on-eap.jar" fork="true" dir="${project.build.directory}/application-server" />
+                    <get src="${fuse.on.eap.url}" dest="${project.build.directory}/fuse-on-eap.jar"></get>
+                    <java jar="${project.build.directory}/fuse-on-eap.jar" fork="true" dir="${project.build.directory}/application-server"></java>
                   </target>
                 </configuration>
               </execution>
@@ -359,13 +355,11 @@
               <execution>
                 <id>start-container</id>
                 <phase>none</phase>
-                <goals/>
                 <!-- do nothing, container is not managed by cargo -->
               </execution>
               <execution>
                 <id>stop-container</id>
                 <phase>none</phase>
-                <goals/>
                 <!-- do nothing, container is not managed by cargo -->
               </execution>
             </executions>

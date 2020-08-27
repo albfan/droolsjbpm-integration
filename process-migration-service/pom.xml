@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>droolsjbpm-integration</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>process-migration-service</artifactId>
@@ -34,8 +32,7 @@
     <!-- Kie server datasource configuration. -->
     <!-- <org.kie.server.persistence.ds/> Defined in container profiles. -->
     <org.kie.server.persistence.dialect>org.hibernate.dialect.H2Dialect</org.kie.server.persistence.dialect>
-    <org.kie.server.datasource.connection.url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    </org.kie.server.datasource.connection.url>
+    <org.kie.server.datasource.connection.url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</org.kie.server.datasource.connection.url>
     <org.kie.server.datasource.username>sa</org.kie.server.datasource.username>
     <org.kie.server.datasource.password>sa</org.kie.server.datasource.password>
     <org.kie.server.datasource.driver.class>org.h2.jdbcx.JdbcDataSource</org.kie.server.datasource.driver.class>
@@ -56,9 +53,9 @@
     <maven.jdbc.username>sa</maven.jdbc.username>
     <maven.jdbc.password>foo</maven.jdbc.password>
     <maven.jdbc.url>jdbc:h2:mem:test</maven.jdbc.url>
-    <maven.jdbc.db.name/>
-    <maven.jdbc.db.server/>
-    <maven.jdbc.db.port/>
+    <maven.jdbc.db.name></maven.jdbc.db.name>
+    <maven.jdbc.db.server></maven.jdbc.db.server>
+    <maven.jdbc.db.port></maven.jdbc.db.port>
     <maven.jdbc.schema>public</maven.jdbc.schema>
   </properties>
 
@@ -450,7 +447,7 @@
               </dependency>
             </dependencies>
           </container>
-          <deployer/>
+          <deployer></deployer>
           <deployables>
             <deployable>
               <groupId>org.kie.server</groupId>
@@ -635,13 +632,11 @@
               <execution>
                 <id>start-container</id>
                 <phase>none</phase>
-                <goals/>
                 <!-- do nothing, container is not managed by cargo -->
               </execution>
               <execution>
                 <id>stop-container</id>
                 <phase>none</phase>
-                <goals/>
                 <!-- do nothing, container is not managed by cargo -->
               </execution>
             </executions>
@@ -653,12 +648,10 @@
               <execution>
                 <id>start-process-migration-service</id>
                 <phase>none</phase>
-                <goals/>
               </execution>
               <execution>
                 <id>stop-process-migration-service</id>
                 <phase>none</phase>
-                <goals/>
               </execution>
             </executions>
           </plugin>

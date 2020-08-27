@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-osgi</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-karaf-features</artifactId>
@@ -32,14 +32,14 @@
     <karaf.version.org.eclipse.jdt>${version.org.eclipse.jdt}</karaf.version.org.eclipse.jdt>
 
     <!-- used by jbpm-commons -->
-    <karaf.version.org.jboss.spec.javax.security.jacc>1.0.0.Final</karaf.version.org.jboss.spec.javax.security.jacc>
-    <karaf.version.org.jboss.spec.javax.interceptor>1.0.0.Final</karaf.version.org.jboss.spec.javax.interceptor>
+    <karaf.version.org.jboss.spec.javax.security.jacc>1.0.0.Final-redhat-1</karaf.version.org.jboss.spec.javax.security.jacc>
+    <karaf.version.org.jboss.spec.javax.interceptor>1.0.0.Final-redhat-1</karaf.version.org.jboss.spec.javax.interceptor>
     <!-- Geronimo servlet-api bundle is needed by Fuse 6.2.x and javax-servlet by Fuse 6.3.x+ -->
     <karaf.version.org.apache.geronimo.specs.servlet>1.0</karaf.version.org.apache.geronimo.specs.servlet>
-    <karaf.version.javax.servlet>3.1.0</karaf.version.javax.servlet>
-    <karaf.version.org.apache.geronimo.specs.jms>1.1.1</karaf.version.org.apache.geronimo.specs.jms>
+    <karaf.version.javax.servlet>3.1.0.redhat-1</karaf.version.javax.servlet>
+    <karaf.version.org.apache.geronimo.specs.jms>1.1.1.redhat-2</karaf.version.org.apache.geronimo.specs.jms>
     <karaf.version.org.apache.geronimo.specs.jpa>1.0-alpha-1</karaf.version.org.apache.geronimo.specs.jpa>
-    <karaf.version.org.apache.geronimo.specs.jta>1.1.1</karaf.version.org.apache.geronimo.specs.jta>
+    <karaf.version.org.apache.geronimo.specs.jta>1.1.1.redhat-00003</karaf.version.org.apache.geronimo.specs.jta>
     <karaf.version.org.jboss.spec.javax.el.jboss-el-api_3.0_spec>${version.org.jboss.spec.javax.el.jboss-el-api_3.0_spec}</karaf.version.org.jboss.spec.javax.el.jboss-el-api_3.0_spec>
     <!-- used by optaplanner -->
     <karaf.version.org.apache.servicemix.bundles.reflections>0.9.10_2</karaf.version.org.apache.servicemix.bundles.reflections>
@@ -49,16 +49,16 @@
     <karaf.version.org.apache.servicemix.bundles.ant>1.8.2_2</karaf.version.org.apache.servicemix.bundles.ant>
     <karaf.version.org.apache.servicemix.bundles.dom4j>1.6.1_5</karaf.version.org.apache.servicemix.bundles.dom4j>
     <karaf.version.org.apache.servicemix.bundles.serp>1.14.1_1</karaf.version.org.apache.servicemix.bundles.serp>
-    <karaf.version.com.fasterxml.classmate>1.3.1</karaf.version.com.fasterxml.classmate>
+    <karaf.version.com.fasterxml.classmate>1.3.1.redhat-1</karaf.version.com.fasterxml.classmate>
     <karaf.version.org.jboss.jandex>1.1.0.Final</karaf.version.org.jboss.jandex>
-    <karaf.version.javax.validation>1.1.0.Final</karaf.version.javax.validation>
+    <karaf.version.javax.validation>1.1.0.Final-redhat-1</karaf.version.javax.validation>
 
-    <karaf.version.org.apache.logging.log4j>2.5</karaf.version.org.apache.logging.log4j>
+    <karaf.version.org.apache.logging.log4j>2.5.0.redhat-3</karaf.version.org.apache.logging.log4j>
     <!-- used by hibernate-validator -->
     <karaf.version.org.apache.servicemix.specs.jsr303-api>2.4.0</karaf.version.org.apache.servicemix.specs.jsr303-api>
 
     <!-- Overwrites with a different Maven version. Apache POI 3.11+ needs version >=1.9 -->
-    <karaf.version.commons-codec>1.10</karaf.version.commons-codec>
+    <karaf.version.commons-codec>1.10.0.redhat-5</karaf.version.commons-codec>
     <karaf.version.commons-collections4>4.1</karaf.version.commons-collections4>
     <karaf.version.javax.inject>${version.org.geronimo.atinject}</karaf.version.javax.inject>
     <karaf.version.org.codehaus.janino>${version.org.codehaus.janino}</karaf.version.org.codehaus.janino>
@@ -72,7 +72,7 @@
     <karaf.servicemix.version.org.apache.poi>3.15_1</karaf.servicemix.version.org.apache.poi>
     <!-- Santurio and xmlresolver needed by POI 3.15+ -->
     <karaf.version.org.apache.commons-collections4>4.1</karaf.version.org.apache.commons-collections4>
-    <karaf.version.org.apache.santurio>2.0.6</karaf.version.org.apache.santurio>
+    <karaf.version.org.apache.santurio>2.0.6.redhat-1</karaf.version.org.apache.santurio>
     <karaf.servicemix.version.xmlresolver>1.2_5</karaf.servicemix.version.xmlresolver>
     <karaf.servicemix.version.org.codehaus.woodstox>3.2.9_3</karaf.servicemix.version.org.codehaus.woodstox>
     <karaf.servicemix.version.org.quartz-scheduler>1.8.5_2</karaf.servicemix.version.org.quartz-scheduler>

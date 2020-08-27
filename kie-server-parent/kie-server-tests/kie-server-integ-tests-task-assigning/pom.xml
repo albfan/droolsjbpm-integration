@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.kie.server</groupId>
     <artifactId>kie-server-tests</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-server-integ-tests-task-assigning</artifactId>
@@ -139,7 +139,7 @@
               <org.kie.server.taskAssigning.processRuntime.url>http://${container.hostname}:${container.port}/kie-server-services/services/rest/server</org.kie.server.taskAssigning.processRuntime.url>
               <org.kie.server.taskAssigning.processRuntime.user>yoda</org.kie.server.taskAssigning.processRuntime.user>
               <org.kie.server.taskAssigning.processRuntime.pwd>usetheforce123@</org.kie.server.taskAssigning.processRuntime.pwd>
-              <org.kie.server.taskAssigning.processRuntime.targetUser>yoda</org.kie.server.taskAssigning.processRuntime.targetUser>>
+              <org.kie.server.taskAssigning.processRuntime.targetUser>yoda</org.kie.server.taskAssigning.processRuntime.targetUser>&gt;
               <org.kie.server.taskAssigning.solutionSyncInterval>PT1S</org.kie.server.taskAssigning.solutionSyncInterval>
 
               <org.kie.server.taskAssigning.userSystem.name>SimpleUserSystemService</org.kie.server.taskAssigning.userSystem.name>

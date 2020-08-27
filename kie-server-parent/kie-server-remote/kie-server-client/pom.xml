@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.kie.server</groupId>
     <artifactId>kie-server-remote</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-server-client</artifactId>
@@ -165,16 +165,12 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <configuration>
           <instructions>
-            <Export-Package>
-              org.kie.server.client.*
-            </Export-Package>
-            <Import-Package>
-              javax.jms;resolution:=optional,
+            <Export-Package>org.kie.server.client.*</Export-Package>
+            <Import-Package>javax.jms;resolution:=optional,
               com.thoughtworks.xstream;resolution:=optional,
               org.xmlpull;resolution:=optional,
               javax.security.jacc;resolution:=optional,
-              *
-            </Import-Package>
+              *</Import-Package>
           </instructions>
         </configuration>
       </plugin>

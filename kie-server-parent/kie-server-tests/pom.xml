@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.kie.server</groupId>
     <artifactId>kie-server-parent</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <artifactId>kie-server-tests</artifactId>
@@ -40,21 +40,21 @@
     <kie.server.testing.remote.repo.url>file://${kie.server.testing.remote.repo.dir}</kie.server.testing.remote.repo.url>
     <!-- Custom settings.xml used when building the testing kjars. By default there is no additional configuration needed,
          but for testing e.g. stated builds it is necessary to pass additional repository with the staged artifacts. -->
-    <kie.server.testing.kjars.build.settings.xml/>
+    <kie.server.testing.kjars.build.settings.xml></kie.server.testing.kjars.build.settings.xml>
     <kie.server.server.deployment.settings.xml>${project.build.testOutputDirectory}/kie-server-testing-server-custom-settings.xml</kie.server.server.deployment.settings.xml>
     <org.jbpm.document.storage>${project.build.directory}/docs</org.jbpm.document.storage>
     <kie.server.router.url>http://localhost:${router.port}</kie.server.router.url>
     <!-- This property can be overridden to exclude specific test category according to specific needs. -->
-    <failsafe.excluded.groups/>
+    <failsafe.excluded.groups></failsafe.excluded.groups>
     <!-- Sybase driver leaks its Timestamp implementation. To correctly handle it we need to add driver as additional test classpath. -->
-    <maven.jdbc.driver.jar/>
+    <maven.jdbc.driver.jar></maven.jdbc.driver.jar>
     <!-- No policy activated by default but overwritten at kie-server-integ-tests-policy -->
-    <org.kie.server.policy.activate/>
+    <org.kie.server.policy.activate></org.kie.server.policy.activate>
     <policy.klo.interval>0</policy.klo.interval>
     <!-- Set to true if you want to skip JMS tests even for containers with available JMS. -->
     <jms.skip>false</jms.skip>
     <!-- Property for configuring Maven mirror in Kie server settings.xml. Used to speed up test execution by using cache server. Empty by default. -->
-    <maven.settings.mirror/>
+    <maven.settings.mirror></maven.settings.mirror>
 
     <!-- Kie server datasource configuration. -->
     <!--  <org.kie.server.persistence.ds/> Defined in container profiles.-->
@@ -67,7 +67,7 @@
 
     <!-- Springboot specific property which is overridden by production DBs profile -->
     <!-- By default we use bundled H2 database jar -->
-    <springboot.jdbc.driver.jar/>
+    <springboot.jdbc.driver.jar></springboot.jdbc.driver.jar>
 
     <!-- The EAP 7 binary can't be anonymously downloaded because of the license. It can be downloaded manually
          and for free (e.g. from http://jbossas.jboss.org/downloads.html) and the zip location needs to be specified
@@ -433,8 +433,8 @@
             <phase>pre-integration-test</phase>
             <configuration>
               <target>
-                <mkdir dir="${kie.server.testing.server.local.repo.dir}"/>
-                <mkdir dir="${kie.server.testing.remote.repo.dir}"/>
+                <mkdir dir="${kie.server.testing.server.local.repo.dir}"></mkdir>
+                <mkdir dir="${kie.server.testing.remote.repo.dir}"></mkdir>
               </target>
             </configuration>
             <goals>
@@ -569,11 +569,9 @@
               <configuration>
                 <configuration>
                   <properties>
-                    <cargo.start.jvmargs>
-                      -Xdebug
+                    <cargo.start.jvmargs>-Xdebug
                       -Xrunjdwp:transport=dt_socket,server=y,suspend=${container.suspend},address=${debug.port}
-                      -Xnoagent
-                    </cargo.start.jvmargs>
+                      -Xnoagent</cargo.start.jvmargs>
                   </properties>
                 </configuration>
               </configuration>
@@ -661,12 +659,8 @@
                 <configuration>
                   <properties>
                     <cargo.jvmargs>-Xmx2048m</cargo.jvmargs>
-                    <cargo.tomcat.valve.jaas>
-                      className=org.kie.integration.tomcat.JACCValve
-                    </cargo.tomcat.valve.jaas>
-                    <cargo.tomcat.valve.sso>
-                      className=org.apache.catalina.authenticator.SingleSignOn
-                    </cargo.tomcat.valve.sso>
+                    <cargo.tomcat.valve.jaas>className=org.kie.integration.tomcat.JACCValve</cargo.tomcat.valve.jaas>
+                    <cargo.tomcat.valve.sso>className=org.apache.catalina.authenticator.SingleSignOn</cargo.tomcat.valve.sso>
                   </properties>
                   <resources>
                     <resource>
@@ -795,12 +789,10 @@
                   <properties>
                     <cargo.jboss.configuration>standalone-full</cargo.jboss.configuration>
                     <cargo.jvmargs>-Xmx2048m</cargo.jvmargs>
-                    <cargo.resource.resource.mail>
-                       cargo.resource.name=mail/Session|
+                    <cargo.resource.resource.mail>cargo.resource.name=mail/Session|
                        cargo.resource.type=javax.mail.Session|
                        cargo.resource.id=mail|
-                       cargo.resource.parameters=mail.smtp.host=localhost;mail.smtp.port=2525;mail.smtp.from=kie-server-test@domain.com
-                    </cargo.resource.resource.mail>
+                       cargo.resource.parameters=mail.smtp.host=localhost;mail.smtp.port=2525;mail.smtp.from=kie-server-test@domain.com</cargo.resource.resource.mail>
                   </properties>
                   <datasources>
                     <datasource>
@@ -950,12 +942,10 @@
                   <properties>
                     <cargo.jboss.configuration>standalone-full</cargo.jboss.configuration>
                     <cargo.jvmargs>-Xmx2048m</cargo.jvmargs>
-                    <cargo.resource.resource.mail>
-                       cargo.resource.name=mail/Session|
+                    <cargo.resource.resource.mail>cargo.resource.name=mail/Session|
                        cargo.resource.type=javax.mail.Session|
                        cargo.resource.id=mail|
-                       cargo.resource.parameters=mail.smtp.host=localhost;mail.smtp.port=2525;mail.smtp.from=kie-server-test@domain.com
-                    </cargo.resource.resource.mail>
+                       cargo.resource.parameters=mail.smtp.host=localhost;mail.smtp.port=2525;mail.smtp.from=kie-server-test@domain.com</cargo.resource.resource.mail>
                   </properties>
                 </configuration>
               </configuration>
@@ -1109,46 +1099,32 @@
                   <properties>
                     <cargo.jvmargs>-Xmx2048m -Dkie.server.jms.queues.response=jms/KIE.SERVER.RESPONSE</cargo.jvmargs>
                     <!-- CFs -->
-                    <cargo.resource.resource.jms.cf.request>
-                      cargo.resource.name=jms/cf/KIE.SERVER.REQUEST|
+                    <cargo.resource.resource.jms.cf.request>cargo.resource.name=jms/cf/KIE.SERVER.REQUEST|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.REQUEST
-                    </cargo.resource.resource.jms.cf.request>
-                    <cargo.resource.resource.jms.cf.response>
-                      cargo.resource.name=jms/cf/KIE.SERVER.RESPONSE|
+                      cargo.resource.id=KIE.SERVER.REQUEST</cargo.resource.resource.jms.cf.request>
+                    <cargo.resource.resource.jms.cf.response>cargo.resource.name=jms/cf/KIE.SERVER.RESPONSE|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.RESPONSE
-                    </cargo.resource.resource.jms.cf.response>
-                    <cargo.resource.resource.jms.executor.cf.request>
-                      cargo.resource.name=jms/cf/KIE.SERVER.EXECUTOR|
+                      cargo.resource.id=KIE.SERVER.RESPONSE</cargo.resource.resource.jms.cf.response>
+                    <cargo.resource.resource.jms.executor.cf.request>cargo.resource.name=jms/cf/KIE.SERVER.EXECUTOR|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.EXECUTOR
-                    </cargo.resource.resource.jms.executor.cf.request>
+                      cargo.resource.id=KIE.SERVER.EXECUTOR</cargo.resource.resource.jms.executor.cf.request>
                     <!-- Qs -->
-                    <cargo.resource.resource.jms.queue.request>
-                      cargo.resource.name=jms/KIE.SERVER.REQUEST|
+                    <cargo.resource.resource.jms.queue.request>cargo.resource.name=jms/KIE.SERVER.REQUEST|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.REQUEST
-                    </cargo.resource.resource.jms.queue.request>
-                    <cargo.resource.resource.jms.queue.response>
-                      cargo.resource.name=jms/KIE.SERVER.RESPONSE|
+                      cargo.resource.id=KIE.SERVER.REQUEST</cargo.resource.resource.jms.queue.request>
+                    <cargo.resource.resource.jms.queue.response>cargo.resource.name=jms/KIE.SERVER.RESPONSE|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.RESPONSE
-                    </cargo.resource.resource.jms.queue.response>
-                    <cargo.resource.resource.jms.executor.queue.request>
-                      cargo.resource.name=jms/KIE.SERVER.EXECUTOR|
+                      cargo.resource.id=KIE.SERVER.RESPONSE</cargo.resource.resource.jms.queue.response>
+                    <cargo.resource.resource.jms.executor.queue.request>cargo.resource.name=jms/KIE.SERVER.EXECUTOR|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.EXECUTOR
-                    </cargo.resource.resource.jms.executor.queue.request>
+                      cargo.resource.id=KIE.SERVER.EXECUTOR</cargo.resource.resource.jms.executor.queue.request>
                     <!-- Datasource -->
-                    <cargo.datasource.datasource.h2>
-                      cargo.datasource.driver=org.h2.Driver|
+                    <cargo.datasource.datasource.h2>cargo.datasource.driver=org.h2.Driver|
                       cargo.datasource.url=jdbc:h2:mem:test-db|
                       cargo.datasource.jndi=jdbc/jbpm|
                       cargo.datasource.username=sa|
                       cargo.datasource.password=|
-                      cargo.datasource.transactionsupport=XA_TRANSACTION
-                    </cargo.datasource.datasource.h2>
+                      cargo.datasource.transactionsupport=XA_TRANSACTION</cargo.datasource.datasource.h2>
                   </properties>
                 </configuration>
               </configuration>
@@ -1239,54 +1215,36 @@
                     <cargo.websphere.classloader.mode>PARENT_LAST</cargo.websphere.classloader.mode>
                     <cargo.websphere.war.classloader.policy>SINGLE</cargo.websphere.war.classloader.policy>
                     <!-- CFs -->
-                    <cargo.resource.resource.jms.cf.request>
-                      cargo.resource.name=jms/cf/KIE.SERVER.REQUEST|
+                    <cargo.resource.resource.jms.cf.request>cargo.resource.name=jms/cf/KIE.SERVER.REQUEST|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.REQUEST
-                    </cargo.resource.resource.jms.cf.request>
-                    <cargo.resource.resource.jms.cf.response>
-                      cargo.resource.name=jms/cf/KIE.SERVER.RESPONSE|
+                      cargo.resource.id=KIE.SERVER.REQUEST</cargo.resource.resource.jms.cf.request>
+                    <cargo.resource.resource.jms.cf.response>cargo.resource.name=jms/cf/KIE.SERVER.RESPONSE|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.RESPONSE
-                    </cargo.resource.resource.jms.cf.response>
-                    <cargo.resource.resource.jms.executor.cf.request>
-                      cargo.resource.name=jms/cf/KIE.SERVER.EXECUTOR|
+                      cargo.resource.id=KIE.SERVER.RESPONSE</cargo.resource.resource.jms.cf.response>
+                    <cargo.resource.resource.jms.executor.cf.request>cargo.resource.name=jms/cf/KIE.SERVER.EXECUTOR|
                       cargo.resource.type=javax.jms.ConnectionFactory|
-                      cargo.resource.id=KIE.SERVER.EXECUTOR
-                    </cargo.resource.resource.jms.executor.cf.request>
+                      cargo.resource.id=KIE.SERVER.EXECUTOR</cargo.resource.resource.jms.executor.cf.request>
                     <!-- Qs -->
-                    <cargo.resource.resource.jms.queue.request>
-                      cargo.resource.name=jms/KIE.SERVER.REQUEST|
+                    <cargo.resource.resource.jms.queue.request>cargo.resource.name=jms/KIE.SERVER.REQUEST|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.REQUEST
-                    </cargo.resource.resource.jms.queue.request>
-                    <cargo.resource.resource.jms.queue.response>
-                      cargo.resource.name=jms/KIE.SERVER.RESPONSE|
+                      cargo.resource.id=KIE.SERVER.REQUEST</cargo.resource.resource.jms.queue.request>
+                    <cargo.resource.resource.jms.queue.response>cargo.resource.name=jms/KIE.SERVER.RESPONSE|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.RESPONSE
-                    </cargo.resource.resource.jms.queue.response>
-                    <cargo.resource.resource.jms.executor.queue.request>
-                      cargo.resource.name=jms/KIE.SERVER.EXECUTOR|
+                      cargo.resource.id=KIE.SERVER.RESPONSE</cargo.resource.resource.jms.queue.response>
+                    <cargo.resource.resource.jms.executor.queue.request>cargo.resource.name=jms/KIE.SERVER.EXECUTOR|
                       cargo.resource.type=javax.jms.Queue|
-                      cargo.resource.id=KIE.SERVER.EXECUTOR
-                    </cargo.resource.resource.jms.executor.queue.request>
+                      cargo.resource.id=KIE.SERVER.EXECUTOR</cargo.resource.resource.jms.executor.queue.request>
                     <!-- Datasource -->
-                    <cargo.datasource.datasource.h2>
-                      cargo.datasource.driver=org.h2.jdbcx.JdbcDataSource|
+                    <cargo.datasource.datasource.h2>cargo.datasource.driver=org.h2.jdbcx.JdbcDataSource|
                       cargo.datasource.url=jdbc:h2:mem:test-db|
                       cargo.datasource.jndi=jdbc/jbpm|
                       cargo.datasource.username=sa|
                       cargo.datasource.password=|
-                      cargo.datasource.transactionsupport=XA_TRANSACTION
-                    </cargo.datasource.datasource.h2>
+                      cargo.datasource.transactionsupport=XA_TRANSACTION</cargo.datasource.datasource.h2>
                     <!-- Binding -->
-                    <cargo.websphere.ejb.act.binding>
-                      kie-server-services:KieServerMDB:jms/KIE.SERVER.REQUEST|
-                      kie-server-services:KieExecutorMDB:jms/KIE.SERVER.EXECUTOR
-                    </cargo.websphere.ejb.act.binding>
-                    <cargo.websphere.ejb.res.binding>
-                      kie-server-services:KieServerMDB:org.kie.server.jms.KieServerMDB/factory:jms/cf/KIE.SERVER.REQUEST
-                    </cargo.websphere.ejb.res.binding>
+                    <cargo.websphere.ejb.act.binding>kie-server-services:KieServerMDB:jms/KIE.SERVER.REQUEST|
+                      kie-server-services:KieExecutorMDB:jms/KIE.SERVER.EXECUTOR</cargo.websphere.ejb.act.binding>
+                    <cargo.websphere.ejb.res.binding>kie-server-services:KieServerMDB:org.kie.server.jms.KieServerMDB/factory:jms/cf/KIE.SERVER.REQUEST</cargo.websphere.ejb.res.binding>
                   </properties>
                 </configuration>
               </configuration>
@@ -1515,14 +1473,13 @@
         </property>
       </activation>
       <properties>
-        <maven.settings.mirror><![CDATA[
-   <mirrors>
-     <mirror>
-       <id>mirror-central</id>
-       <mirrorOf>external:*,!remote-testing-repo</mirrorOf>
-       <url>${env.NEXUS_CACHE_URL}</url>
-     </mirror>
-   </mirrors>]]></maven.settings.mirror>
+        <maven.settings.mirror>&lt;mirrors&gt;
+     &lt;mirror&gt;
+       &lt;id&gt;mirror-central&lt;/id&gt;
+       &lt;mirrorOf&gt;external:*,!remote-testing-repo&lt;/mirrorOf&gt;
+       &lt;url&gt;${env.NEXUS_CACHE_URL}&lt;/url&gt;
+     &lt;/mirror&gt;
+   &lt;/mirrors&gt;</maven.settings.mirror>
       </properties>
     </profile>
   </profiles>

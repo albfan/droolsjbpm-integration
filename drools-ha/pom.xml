@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>droolsjbpm-integration</artifactId>
-    <version>7.39.1.20200826</version>
+    <version>7.39.0.Final-redhat-00007</version>
   </parent>
 
   <name>Drools :: High Availability</name>
@@ -17,13 +17,13 @@
     <dockerImageName>quickstarter/openshift-kie-springboot</dockerImageName>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.annotations>2.0.1.Final</version.annotations>
+    <version.annotations>2.0.1.Final-redhat-00001</version.annotations>
     <version.fabric8.plugin>4.2.0</version.fabric8.plugin>
     <version.fabric8.docker-plugin>0.30.0</version.fabric8.docker-plugin>
     <surefire.forkCount>1</surefire.forkCount>
     <version.javax.el>3.0.1-b08</version.javax.el>
     <version.javax.ws.rs>2.0.0.Final</version.javax.ws.rs>
-    <version.org.apache.kafka>2.2.1</version.org.apache.kafka>
+    <version.org.apache.kafka>2.2.1.redhat-00005</version.org.apache.kafka>
     <version.k8s.client>4.6.0</version.k8s.client>
     <version.logback.kafka.appender>0.2.0-RC2</version.logback.kafka.appender>
     <version.servlet>2.0.0.Final</version.servlet>
