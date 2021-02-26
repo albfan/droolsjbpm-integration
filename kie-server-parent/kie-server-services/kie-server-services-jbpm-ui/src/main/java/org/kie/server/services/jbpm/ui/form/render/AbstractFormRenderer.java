@@ -30,9 +30,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -74,6 +77,7 @@ public abstract class AbstractFormRenderer implements FormRenderer {
     private String serverPath;
     private String resourcePath;
     
+    private static final DecimalFormat decimalFormat = new DecimalFormat("#.#################", DecimalFormatSymbols.getInstance(Locale.US));
     
     public AbstractFormRenderer(String serverPath, String resources) {
         this.serverPath = serverPath;
@@ -378,7 +382,12 @@ public abstract class AbstractFormRenderer implements FormRenderer {
                             if (outputs.get(field.getBinding()) != null) {
                                 value = outputs.get(field.getBinding());
                             }
-                            
+
+                            if (value instanceof Double) {
+                                value = decimalFormat.format(value);
+                            } else if (value instanceof Float) {
+                                value = decimalFormat.format(value);
+                            }
                             item.setValue(value);
                             item.setReadOnly(field.isReadOnly());
                             item.setRequired(field.isRequired());
